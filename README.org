@@ -1,0 +1,7 @@
+* clj-uke
+Quick program to display notes playable on ukulele with a time delay for note
+recognition practice.
+** TODO
+Some features to add later:
+- Add more notes: Keeping it limited to just C-D7.
+- Add flats and sharps.
