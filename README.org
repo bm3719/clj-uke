@@ -8,17 +8,18 @@ application that did exactly this, so made my own to run in the Clojure REPL.
 ** Sample
 An output cycle can be illustrated by the following example:
 #+begin_src
------------
-
------------
-
------------
-
------O-----
-
------------
-
-     -
+     /\
++----|-|------------
+|    |/
+|----|--------------
+|   /|
+|--/-|--------------
+| |  , -
+|-|-(_)-)-----O-----
+|  \ | /
++----|--------------
+     |
+   (_|        -
 #+end_src
 This is a G5, which one would then play on their ukulele.  Running =-main= will
 display a new note every 8 sec.  The bottom line with single dash is the first

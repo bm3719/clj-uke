@@ -1,6 +1,20 @@
 (ns clj-uke.core
   (:require [malli.generator :as mg]))
 
+(def treble-clef
+  ["     /\\  "
+   "+----|-|-"
+   "|    |/  "
+   "|----|---"
+   "|   /|   "
+   "|--/-|---"
+   "| |  , - "
+   "|-|-(_)-)"
+   "|  \\ | / "
+   "+----|---"
+   "     |   "
+   "   (_|   "])
+
 ;; TODO: Add more notes here later
 (def notes
   (map vector
@@ -37,12 +51,13 @@
   "Generate staff with populated note." []
   (let [note (rand-note)
         msur (insert-note note)]
-    (doseq [line msur]
-      (println line))))
+    (println (first treble-clef))
+    (doseq [linum (range (count msur))]
+      (println (str (nth (rest treble-clef) linum) (nth msur linum))))))
 
 (defn -main [& args]
   (future
     (while true
-      (println "")
+      (println)
       (gen-note)
       (Thread/sleep 8000))))
