@@ -1,7 +1,10 @@
 * clj-uke
 Quick program to display notes playable on ukulele with a time delay for note
 recognition practice.
+
+Quickly made to go from reading tabs to standard notation.  Couldn't find an
+existing webapp that did this, so made my own.
 ** TODO
 Some features to add later:
-- Add more notes: Keeping it limited to just C-D7.
+- Add more notes: Keeping it limited to just C5-D6 for now.
 - Add flats and sharps.

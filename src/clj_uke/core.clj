@@ -7,32 +7,34 @@
        [:c :d :e :f :g :a :b :c :d]
        (reverse (range 11))))
 
+;; ASCII staff rows (top to bottom), 11 rows total.
 (def staff-template
-  "ASCII staff rows (top to bottom)."
   (->> (cycle    ["-----------"
                   "           "])
        (take 10)
        vec
        (#(conj %1 "     -     "))))
 
-(def seed (atom 1807))
+(def seed (atom 1808))
+(defn get-next-seed [] (swap! seed inc))
 
-(defn get-next-seed []
-  (swap! seed inc))
-
-(defn rand-note []
+(defn rand-note
+  "Generate random note from seed." []
   (mg/generate (vec (cons :enum notes)) {:seed (get-next-seed)}))
 
-(defn replace-char [s index new-char]
+(defn replace-char
+  "Util fn to insert char at index." [s index new-char]
   (str (subs s 0 index) new-char (subs s (inc index))))
 
-(defn insert-note [note]
+(defn insert-note
+  "Insert given note into staff." [note]
   (for [line (range (count staff-template))]
     (if (= line (second note))
       (replace-char (get staff-template line) 5 "O")
       (get staff-template line))))
 
-(defn gen-note []
+(defn gen-note
+  "Generate staff with populated note." []
   (let [note (rand-note)
         msur (insert-note note)]
     (doseq [line msur]
