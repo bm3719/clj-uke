@@ -44,5 +44,5 @@
   (future
     (while true
       (println "")
-      (gen-note) ; Generate note.
+      (gen-note)
       (Thread/sleep 8000))))

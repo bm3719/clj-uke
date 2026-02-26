@@ -1,10 +1,31 @@
 * clj-uke
-Quick program to display notes playable on ukulele with a time delay for note
-recognition practice.
+A super small program to display time-delayed notes, playable on ukulele,
+intended for note recognition practice.
 
-Quickly made to go from reading tabs to standard notation.  Couldn't find an
-existing webapp that did this, so made my own.
-** TODO
-Some features to add later:
-- Add more notes: Keeping it limited to just C5-D6 for now.
+Quickly written to go from reading tabs to standard notation, while also
+mapping such literacy to the instrument itself.  Couldn't find an existing web
+application that did exactly this, so made my own to run in the Clojure REPL.
+** Sample
+An output cycle can be illustrated by the following example:
+#+begin_src
+-----------
+
+-----------
+
+-----------
+
+-----O-----
+
+-----------
+
+     -
+#+end_src
+This is a G5, which one would then play on their ukulele.  Running =-main= will
+display a new note every 8 sec.  The bottom line with single dash is the first
+lower ledger line, C5.
+** Potential improvements
+Some features to consider adding later:
+- Add more notes: Intentionally keeping it limited to just C5-D6 for now.
 - Add flats and sharps.
+- Add CLI flag for time delay, with generous default.  Currently hardcoded.
+- Consider making random seed used for note selection non-deterministic.
