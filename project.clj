@@ -5,4 +5,5 @@
             :url "https://www.eclipse.org/legal/epl-2.0/"}
   :dependencies [[metosin/malli "0.20.0"]
                  [org.clojure/clojure "1.12.4"]]
-  :repl-options {:init-ns clj-uke.core})
+  :repl-options {:init-ns clj-uke.core}
+  :main clj-uke.core)
