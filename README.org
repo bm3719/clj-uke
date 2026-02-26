@@ -22,7 +22,7 @@ An output cycle can be illustrated by the following example:
    (_|        -
 #+end_src
 This is a G5, which one would then play on their ukulele.  Running =-main= will
-display a new note every 8 sec.  The bottom line with single dash is the first
+display a new note every 5 sec.  The bottom line with single dash is the first
 lower ledger line, C5.
 ** Potential improvements
 Some features to consider adding later:

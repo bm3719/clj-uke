@@ -60,4 +60,4 @@
     (while true
       (println)
       (gen-note)
-      (Thread/sleep 8000))))
+      (Thread/sleep 5000))))
