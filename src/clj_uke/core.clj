@@ -29,7 +29,7 @@
        vec
        (#(conj %1 "     -     "))))
 
-(def seed (atom 1808))
+(def seed (atom 1805))
 (defn get-next-seed [] (swap! seed inc))
 
 (defn rand-note
@@ -60,4 +60,4 @@
     (while true
       (println)
       (gen-note)
-      (Thread/sleep 5000))))
+      (Thread/sleep 4000))))
